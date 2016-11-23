@@ -1,23 +1,27 @@
+require('./config');
 const path = require('path');
 const express = require('express');
+const http = require('http');
+const socketIO = require('socket.io');
 
 const publicPath = path.join(__dirname, '../public');
 
 const app = express();
-
-const env = process.env.NODE_ENV || 'development';
-
-if (env === 'development') {
-    process.env.PORT = 3000;
-} else if (env === 'test') {
-    process.env.PORT = 3000;
-}
-
+const server = http.createServer(app);
+const io = socketIO(server);
 const port = process.env.PORT;
 
 app.use('/', express.static(publicPath));
 
-app.listen(port, ()=> {
+io.on('connection', (socket) => {
+    console.log('New user connected');
+
+    socket.on('disconnect', () => {
+        console.log('User disconnected');
+    });
+});
+
+server.listen(port, ()=> {
    console.log(`Started on port ${port}`);
 });
 
