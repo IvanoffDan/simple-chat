@@ -44,7 +44,7 @@ class SubmitMessage extends React.Component {
                            value={this.state.value}
                            onChange={this.handleChange}/>
                     <span className="input-group-btn">
-                        <button className="btn btn-secondary" type="button">Send</button>
+                        <button className="btn btn-secondary" type="submit">Send</button>
                     </span>
                 </div>
             </form>

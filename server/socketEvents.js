@@ -12,7 +12,7 @@ module.exports = (io) => {
 
         socket.on('action', (action) => {
             if (action.type == DISPATCH_NEW_MESSAGE) {
-                socket.emit('action', {type: NEW_MESSAGE_RECEIVED, data: generateMessage(action.data.from, action.data.text)});
+                io.emit('action', {type: NEW_MESSAGE_RECEIVED, data: generateMessage(action.data.from, action.data.text)});
             }
         });
 

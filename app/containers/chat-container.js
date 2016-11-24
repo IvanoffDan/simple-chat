@@ -9,12 +9,6 @@ import {socket} from '../scripts/socketio';
 class ChatContainer extends React.Component {
 
     render(){
-
-        socket.on('newMessage', function (message) {
-            console.log('newMessage', message);
-            newMessageReceived(message);
-        });
-
         return(
             <div>
                 <MainChatWindow socket = {socket} messages = {this.props.messages}/>
