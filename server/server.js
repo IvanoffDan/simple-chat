@@ -3,6 +3,7 @@ const path = require('path');
 const express = require('express');
 const http = require('http');
 const socketIO = require('socket.io');
+const socketEvents = require('./socketEvents');
 
 const publicPath = path.join(__dirname, '../public');
 
@@ -13,25 +14,10 @@ const port = process.env.PORT;
 
 app.use('/', express.static(publicPath));
 
-io.on('connection', (socket) => {
-    console.log('New user connected');
+socketEvents(io);
 
-    socket.on('createMessage', (newMessage)=>{
-        console.log(newMessage);
-        io.emit('newMessage', {
-            from: newMessage.from,
-            text: newMessage.text,
-            createAt: new Date().getTime()
-        })
-    });
-
-    socket.on('disconnect', () => {
-        console.log('User disconnected');
-    });
-});
-
-server.listen(port, ()=> {
-   console.log(`Started on port ${port}`);
+server.listen(port, () => {
+    console.log(`Started on port ${port}`);
 });
 
 module.exports = {app};
