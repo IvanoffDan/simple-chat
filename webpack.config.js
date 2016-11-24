@@ -4,7 +4,6 @@ const path = require('path');
 module.exports = {
     entry: [
         'script!jquery/dist/jquery.min.js',
-        'script!./app/scripts/socketio.js',
         './app/app.js'
     ],
     externals:{

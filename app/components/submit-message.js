@@ -20,12 +20,17 @@ class SubmitMessage extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
 
-        this.props.socket.emit('createMessage', {
+        this.props.handleDispatchNewMessage({
+            from: "User",
+            text: this.state.value
+        });
+
+        /*this.props.socket.emit('server/createMessage', {
             from: "User",
             text: this.state.value
         }, function (data) {
             console.log('Got it!', data)
-        });
+        });*/
 
         this.setState({value: ""})
     };

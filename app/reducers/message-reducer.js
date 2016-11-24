@@ -6,7 +6,10 @@ export default function(state = INITIAL_STATE, action){
         case NEW_MESSAGE_RECEIVED:
             return {
                 ...state,
-                all: action.data
+                all: [
+                    ...state.all,
+                    action.data
+                ]
             };
         default:
             return state;
