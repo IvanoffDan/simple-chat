@@ -7,7 +7,22 @@
     font-size: .95rem;
 }
 
-chat-messages {
-    list-style-type: none;
-    padding: 10px;
+h3 {
+    text-align: center;
+}
+
+.chat {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.chat-messages {
+    overflow-y: auto;
+    height: 100%
+}
+
+.chat-footer {
+    height: 10vh;
+    flex-shrink: 0;
 }

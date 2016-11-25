@@ -37,18 +37,18 @@ class SubmitMessage extends React.Component {
 
     render() {
         return (
-            <div className="chat-footer">
-                <form id="message-form" onSubmit={this.handleSubmit}>
-                    <div className="input-group">
-                        <input className="form-control" type="text" placeholder="Enter your message..."
-                               value={this.state.value}
-                               onChange={this.handleChange}/>
-                        <span className="input-group-btn">
+                <div className="chat-footer">
+                    <form id="message-form" onSubmit={this.handleSubmit}>
+                        <div className="input-group">
+                            <input className="form-control" type="text" placeholder="Enter your message..."
+                                   value={this.state.value}
+                                   onChange={this.handleChange}/>
+                            <span className="input-group-btn">
                         <button className="btn btn-secondary" type="submit">Send</button>
-                    </span>
-                    </div>
-                </form>
-            </div>
+                            </span>
+                        </div>
+                    </form>
+                </div>
         )
     };
 }

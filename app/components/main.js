@@ -5,8 +5,8 @@ export default class Main extends Component {
         return (
             <div>
                 <h3>Welcome to the Simple Chat!</h3>
-                <div className="chat">
-                    {this.props.children}
+                <div className="container">
+                        {this.props.children}
                 </div>
             </div>
         );

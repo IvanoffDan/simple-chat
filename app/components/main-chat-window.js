@@ -2,26 +2,26 @@ import React from 'react';
 
 class MainChatWindow extends React.Component {
 
-    constructor(props){
+    constructor(props) {
         super(props);
     }
 
-    renderMessages(){
+    renderMessages() {
         return this.props.messages.map((message => {
-            return(
+            return (
                 <li key={message.createdAt}>{message.text}</li>
             );
         }))
 
     }
 
-    render(){
-        return(
-            <div>
-                <ol className="chat-messages">
-                    {this.renderMessages()}
-                </ol>
-            </div>
+    render() {
+        return (
+                <div className="chat-messages">
+                    <ol className="chat-list">
+                        {this.renderMessages()}
+                    </ol>
+                </div>
         )
     }
 }
