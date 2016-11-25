@@ -10,7 +10,7 @@ class ChatContainer extends React.Component {
 
     render(){
         return(
-            <div>
+            <div className="chat-main">
                 <MainChatWindow socket = {socket} messages = {this.props.messages}/>
                 <SubmitMessage socket = {socket} handleDispatchNewMessage = {this.props.dispatchNewMessage}/>
             </div>

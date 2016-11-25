@@ -20,14 +20,14 @@ module.exports = {
         filename: './public/bundle.js'
     },
     module: {
-        loaders: [{
-            exclude: /node_modules/,
-            loader: 'babel',
-        }]
+        loaders: [
+            {exclude: /node_modules/, loader: 'babel',},
+            { test: /\.css$/, loader: "style-loader!css-loader" }
+            ]
     },
     resolve: {
         root: __dirname,
-        extensions: ['', '.js', '.jsx']
+        extensions: ['', '.js', '.jsx', '.css']
     },
     devtool: 'inline-source-map'
 };

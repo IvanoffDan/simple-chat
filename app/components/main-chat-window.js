@@ -18,10 +18,9 @@ class MainChatWindow extends React.Component {
     render(){
         return(
             <div>
-                <p>Messages will be here</p>
-                <div>
+                <ol className="chat-messages">
                     {this.renderMessages()}
-                </div>
+                </ol>
             </div>
         )
     }

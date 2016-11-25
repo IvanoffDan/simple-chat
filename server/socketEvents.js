@@ -6,7 +6,7 @@ module.exports = (io) => {
     io.on('connection', (socket) => {
         console.log('New user connected');
 
-        socket.emit('newMessage', generateMessage('Admin', 'Welcome to the chat app'));
+        socket.emit('action', {type: NEW_MESSAGE_RECEIVED, data: generateMessage('Admin', 'Welcome to the chat app')});
 
         socket.broadcast.emit('newMessage', generateMessage('Admin', 'New user joined'));
 

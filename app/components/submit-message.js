@@ -26,28 +26,29 @@ class SubmitMessage extends React.Component {
         });
 
         /*this.props.socket.emit('server/createMessage', {
-            from: "User",
-            text: this.state.value
-        }, function (data) {
-            console.log('Got it!', data)
-        });*/
+         from: "User",
+         text: this.state.value
+         }, function (data) {
+         console.log('Got it!', data)
+         });*/
 
         this.setState({value: ""})
     };
 
     render() {
         return (
-            <form id="message-form" onSubmit={this.handleSubmit}>
-                <div className="input-group">
-
-                    <input className="form-control" type="text" placeholder="Enter your message..."
-                           value={this.state.value}
-                           onChange={this.handleChange}/>
-                    <span className="input-group-btn">
+            <div className="chat-footer">
+                <form id="message-form" onSubmit={this.handleSubmit}>
+                    <div className="input-group">
+                        <input className="form-control" type="text" placeholder="Enter your message..."
+                               value={this.state.value}
+                               onChange={this.handleChange}/>
+                        <span className="input-group-btn">
                         <button className="btn btn-secondary" type="submit">Send</button>
                     </span>
-                </div>
-            </form>
+                    </div>
+                </form>
+            </div>
         )
     };
 }
