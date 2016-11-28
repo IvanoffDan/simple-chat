@@ -18,9 +18,15 @@ export default class Login extends React.Component {
 
     handleSubmit(e){
         e.preventDefault();
+        let room;
+        if (this.state.roomToggled){
+            room = this.refs.room.value || ""
+        } else {
+            room = ""
+        }
         this.props.handleNewRoom({
-            username: this.refs.username.value,
-            room: this.refs.room.value
+            username: this.refs.username.value  || "Anon",
+            room: room
         });
     }
 
@@ -59,7 +65,7 @@ export default class Login extends React.Component {
                         <label className="form-check-label">
                             <input className="form-check-input" type="checkbox" value=""
                                    onChange={this.handleCheckboxChange.bind(this)}/>
-                            Enter new room?
+                            Enter an existing room?
                         </label>
                     </div>
 
