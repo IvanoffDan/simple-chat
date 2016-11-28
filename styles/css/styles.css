@@ -11,18 +11,57 @@ h3 {
     text-align: center;
 }
 
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.chat-header {
+    height: auto;
+    flex-shrink: 0;
+}
+
 .chat {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     height: 100vh;
 }
 
 .chat-messages {
     overflow-y: auto;
-    height: 100%
+    flex-grow: 1;
+    width: 100%;
 }
 
 .chat-footer {
-    height: 10vh;
+    height: auto;
     flex-shrink: 0;
+    z-index: 99;
+    align-self: flex-end;
+    margin-bottom: .5rem;
+}
+
+.chat-footer form {
+
+}
+
+.message {
+    border: 0;
+    padding: 0 1.25rem;
+    margin: 1px;
+    border-bottom: 1px solid #ddd;
+}
+
+.message-from {
+    font-weight: bold;
+    margin-right: 1rem;
+}
+
+.message-content {
+    overflow-x: auto;
 }

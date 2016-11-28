@@ -11,7 +11,6 @@ socket.on('disconnect', function () {
 
 socket.on('newMessage', function (message) {
     console.log('newMessage', message);
-    /*store.dispatch(newMessageReceived(message));*/
 });
 
 socket.emit('createMessage', {

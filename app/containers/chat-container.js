@@ -11,6 +11,9 @@ class ChatContainer extends React.Component {
     render(){
         return(
             <div className="chat">
+                <div className="chat-header">
+                    <h3>Welcome to the Simple Chat!</h3>
+                </div>
                 <MainChatWindow socket = {socket} messages = {this.props.messages}/>
                 <SubmitMessage socket = {socket} handleDispatchNewMessage = {this.props.dispatchNewMessage}/>
             </div>
