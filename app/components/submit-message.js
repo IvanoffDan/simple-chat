@@ -20,8 +20,7 @@ class SubmitMessage extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
 
-        this.props.handleDispatchNewMessage({
-            from: "User",
+        this.props.onDispatchNewMessage({
             text: this.state.value
         });
 

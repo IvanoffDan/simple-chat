@@ -8,6 +8,13 @@ import {socket} from '../scripts/socketio';
 
 class ChatContainer extends React.Component {
 
+    handleDispatchNewMessage(data){
+        this.props.dispatchNewMessage({
+            from: this.props.username,
+            text: data.text
+        })
+    }
+
     render(){
         return(
             <div className="chat">
@@ -15,7 +22,7 @@ class ChatContainer extends React.Component {
                     <h3>Welcome to the Simple Chat!</h3>
                 </div>
                 <MainChatWindow socket = {socket} messages = {this.props.messages}/>
-                <SubmitMessage socket = {socket} handleDispatchNewMessage = {this.props.dispatchNewMessage}/>
+                <SubmitMessage socket = {socket} onDispatchNewMessage = {this.handleDispatchNewMessage.bind(this)}/>
             </div>
         )
     }
@@ -23,7 +30,8 @@ class ChatContainer extends React.Component {
 
 function mapStateToProps(state) {
     return {
-        messages: state.messages.all
+        messages: state.messages.all,
+        username: state.user.username
     }
 }
 
